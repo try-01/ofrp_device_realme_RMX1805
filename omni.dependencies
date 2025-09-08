@@ -1,2 +1,7 @@
 [
+  {
+    "repository": "OrangeFoxRecovery/vendor_orangefox",
+    "target_path": "vendor/orangefox",
+    "branch": "fox_9.0"
+  }
 ]
