@@ -14,12 +14,30 @@
 # limitations under the License.
 #
 
-PRODUCT_RELEASE_NAME = RMX1805
-
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
-
 $(call inherit-product, build/target/product/embedded.mk)
+
+# ==================== ORANGEFOX CONFIGURATION START ====================
+
+# Inherit from the OrangeFox product configuration
+$(call inherit-product, vendor/orangefox/config/common.mk)
+
+# Fox specific settings
+OF_MAINTAINER := bebas
+FOX_BUILD_TYPE := UnOfficial
+
+# Tampilan Spesifik berdasarkan 'dumpsys display'
+OF_SCREEN_H := 1520
+OF_STATUS_H := 53
+OF_STATUS_INDENT_LEFT := 228
+OF_STATUS_INDENT_RIGHT := 228
+OF_HIDE_NOTCH := 1
+OF_CLOCK_POS := 1
+OF_ALLOW_DISABLE_NAVBAR := 0
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
+
+# ==================== ORANGEFOX CONFIGURATION END ====================
 
 # Time Zone data for recovery
 PRODUCT_COPY_FILES += \
@@ -29,7 +47,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8953
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
+PRODUCT_DEVICE := RMX1805
 PRODUCT_NAME := omni_$(PRODUCT_DEVICE)
 PRODUCT_BRAND := Oppo
 PRODUCT_MODEL := Realme 2
