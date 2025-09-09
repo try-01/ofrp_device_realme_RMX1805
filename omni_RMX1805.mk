@@ -32,7 +32,6 @@ OF_STATUS_INDENT_RIGHT := 228
 OF_HIDE_NOTCH := 1
 OF_CLOCK_POS := 1
 OF_ALLOW_DISABLE_NAVBAR := 0
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
 
 # ==================== ORANGEFOX CONFIGURATION END ====================
 
