@@ -20,9 +20,6 @@ $(call inherit-product, build/target/product/embedded.mk)
 
 # ==================== ORANGEFOX CONFIGURATION START ====================
 
-# Inherit from the OrangeFox product configuration
-$(call inherit-product, vendor/recovery/config/common.mk)
-
 # Fox specific settings
 OF_MAINTAINER := bebas
 FOX_BUILD_TYPE := UnOfficial
