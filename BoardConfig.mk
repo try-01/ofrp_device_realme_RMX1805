@@ -49,7 +49,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 # Menggunakan kernel prebuilt Anda yang sudah berfungsi dan dikonversi
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.lz4-dtb
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
