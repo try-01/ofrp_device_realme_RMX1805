@@ -47,7 +47,7 @@ PLATFORM_VERSION := 9
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := core_ctl_disable_cpumask=0-7 kpti=0 console=ttyMSM0,115200,n8androidboot.console=ttyMSM0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_serial_dm,0x78af000 firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7 androidboot.selinux=permissive buildvariant=userdebug androidboot.emmc=true androidboot.verifiedbootstate=orange androidboot.keymaster=1 root=PARTUUID=7e56e12e-a6d0-2278-97fa-ca48ab77684d androidboot.serialno=af5bf840 androidboot.startup=pwrkey androidboot.mode=normal androidboot.baseband=msm mdss_mdp.panel=1:dsi:0:qcom,mdss_dsi_nt36525_truly_hdp_video:1:none:cfg:single_dsi skip_initramfs rootwait ro init=/init board_id=S88051EA1:board_vol=764204:modem_id=3:operatorID=3 printk.disable_uart=1 board_id=S88051EA1:board_vol=764204:modem_id=3:operatorID=3 printk.disable_uart=1 exp_operator=00110011 androidboot.dtbo_idx=0
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
