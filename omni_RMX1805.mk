@@ -18,23 +18,6 @@
 $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, build/target/product/embedded.mk)
 
-# ==================== ORANGEFOX CONFIGURATION START ====================
-
-# Fox specific settings
-OF_MAINTAINER := bebas
-FOX_BUILD_TYPE := UnOfficial
-
-# Tampilan Spesifik berdasarkan 'dumpsys display'
-OF_SCREEN_H := 1520
-OF_STATUS_H := 53
-OF_STATUS_INDENT_LEFT := 228
-OF_STATUS_INDENT_RIGHT := 228
-OF_HIDE_NOTCH := 1
-OF_CLOCK_POS := 1
-OF_ALLOW_DISABLE_NAVBAR := 0
-
-# ==================== ORANGEFOX CONFIGURATION END ====================
-
 # Time Zone data for recovery
 PRODUCT_COPY_FILES += \
     system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
