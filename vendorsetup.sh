@@ -45,7 +45,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_STATUS_INDENT_LEFT=228
 	export OF_STATUS_INDENT_RIGHT=228
   	export OF_HIDE_NOTCH=1
-  	export OF_CLOCK_POS=1 # 0=kiri, 1=tengah, 2=kanan
+  	export OF_CLOCK_POS=0 # 0=kiri, 1=tengah, 2=kanan
 	export OF_USE_GREEN_LED=0 # Atur ke 0 karena kebanyakan perangkat Realme tidak memiliki LED notifikasi hijau
 
 	# --- Pengaturan Enkripsi & Magisk ---
@@ -56,7 +56,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_USE_NEW_MAGISKBOOT=1 # Gunakan versi magiskboot yang lebih baru
 
 	# Hapus Magisk bawaan jika Anda tidak membutuhkannya
-	# export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-23.0.zip
+	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-23.0.zip
 
 	# --- Pengaturan Fungsionalitas & Kompatibilitas ---
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 # Wajib untuk build modern
