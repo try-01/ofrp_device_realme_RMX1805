@@ -42,6 +42,17 @@ TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_PROVIDES_KEYMASTER := true
 
+# --- Screen & Theme Configuration ---
+# Dikonversi langsung dari vendorsetup.sh
+TW_DEFAULT_LANGUAGE := "en"
+OF_SCREEN_H := 1520
+OF_STATUS_H := 53
+OF_STATUS_INDENT_LEFT := 228
+OF_STATUS_INDENT_RIGHT := 228
+OF_HIDE_NOTCH := 1
+OF_CLOCK_POS := 0
+OF_USE_GREEN_LED := 0
+
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000 androidboot.selinux=permissive
