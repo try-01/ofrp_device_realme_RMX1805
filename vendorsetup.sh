@@ -39,14 +39,14 @@ fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
    	# --- Pengaturan Dasar & Tampilan ---
-	export TW_DEFAULT_LANGUAGE="en"
-	export OF_SCREEN_H=1520
-	export OF_STATUS_H=53
-	export OF_STATUS_INDENT_LEFT=228
-	export OF_STATUS_INDENT_RIGHT=228
-  	export OF_HIDE_NOTCH=1
-  	export OF_CLOCK_POS=0 # 0=kiri, 1=tengah, 2=kanan
-	export OF_USE_GREEN_LED=0 # Atur ke 0 karena kebanyakan perangkat Realme tidak memiliki LED notifikasi hijau
+#	export TW_DEFAULT_LANGUAGE="en"
+#	export OF_SCREEN_H=1520
+#	export OF_STATUS_H=53
+#	export OF_STATUS_INDENT_LEFT=228
+#	export OF_STATUS_INDENT_RIGHT=228
+#  	export OF_HIDE_NOTCH=1
+#  	export OF_CLOCK_POS=0 # 0=kiri, 1=tengah, 2=kanan
+#	export OF_USE_GREEN_LED=0 # Atur ke 0 karena kebanyakan perangkat Realme tidak memiliki LED notifikasi hijau
 
 	# --- Pengaturan Enkripsi & Magisk ---
 	export OF_KEEP_FORCED_ENCRYPTION=1 # Jaga enkripsi tetap aktif, lebih aman
