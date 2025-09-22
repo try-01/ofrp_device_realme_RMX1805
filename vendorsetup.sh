@@ -54,14 +54,14 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_USE_MAGISKBOOT=1 # Gunakan magiskboot untuk membongkar/mengemas boot.img
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1 # Gunakan magiskboot untuk semua patching
 	export OF_USE_NEW_MAGISKBOOT=1 # Gunakan versi magiskboot yang lebih baru
-    export OF_SUPPORT_OZIP_DECRYPTION=1
+ #   export OF_SUPPORT_OZIP_DECRYPTION=1
 
 	# Hapus Magisk bawaan jika Anda tidak membutuhkannya
 	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-23.0.zip
 
 	# --- Pengaturan Fungsionalitas & Kompatibilitas ---
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 # Wajib untuk build modern
-	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1 # Lewati pemeriksaan Treble, berguna untuk perangkat lama
+#	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1 # Lewati pemeriksaan Treble, berguna untuk perangkat lama
 	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1510672800" # Workaround untuk Anti-Rollback Protection lama
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1 # Lewati backup folder multi-user (hemat ruang)
 	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1 # Dukungan untuk update OTA berbasis blok
