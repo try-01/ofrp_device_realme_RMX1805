@@ -27,7 +27,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := RMX1805
-PRODUCT_NAME := RMX1805
+PRODUCT_NAME := omni_$(PRODUCT_DEVICE)
 PRODUCT_BRAND := Oppo
 PRODUCT_MODEL := Realme 2
 PRODUCT_MANUFACTURER := Oppo
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=RMX1805 \
+    BUILD_PRODUCT=RMX1805 \
+    TARGET_DEVICE=RMX1805
+
+# HACK: Set a future vendor patch level and other properties to
+# bypass checks in some stock updater-scripts.
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2099-12-31
