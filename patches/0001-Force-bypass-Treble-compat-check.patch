@@ -1,5 +1,5 @@
---- a/install/installcommand.cpp
-+++ b/install/installcommand.cpp
+--- a/installcommand.cpp
++++ b/installcommand.cpp
 @@ -348,13 +348,8 @@
  // Verifes the compatibility info in a Treble-compatible package. Returns true directly if the
  // entry doesn't exist. Note that the compatibility info is packed in a zip file inside the OTA
