@@ -1,14 +1,12 @@
 --- a/install/installcommand.cpp
 +++ b/install/installcommand.cpp
-@@ -28,14 +28,9 @@
- #include "otautil/paths.h"
+@@ -32,13 +32,8 @@
  #include "otautil/print_sha1.h"
  
--
  bool verify_package_compatibility(ZipWrap *zw) {
--#ifdef OF_NO_TREble_COMPATIBILITY_CHECK
+-#ifdef OF_NO_TREBLE_COMPATIBILITY_CHECK
 -   printf("Bypassing Treble compatibility check ...\n");
-+   printf("OrangeFox: Forcefully bypassing Treble compatibility check via patch.\n");
++#   printf("OrangeFox: Forcefully bypassing Treble compatibility check via patch.\n");
     return true;
 -#endif
 -  ZipArchiveHandle package_zip = zw->GetZipArchiveHandle();
