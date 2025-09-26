@@ -90,6 +90,7 @@ TW_SKIP_COMPATIBILITY_CHECK := true # Tidak lagi dibutuhkan karena sudah di-patc
 # Nonaktifkan dekripsi berbasis hardware dan paksa penggunaan dekripsi software.
 # Ini adalah kunci untuk memperbaiki 'failed to decrypt data'.
 # =================================================================
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
 TARGET_PROVIDES_KEYMASTER := true
