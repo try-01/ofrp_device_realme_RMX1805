@@ -49,7 +49,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_USE_GREEN_LED=0 # Atur ke 0 karena kebanyakan perangkat Realme tidak memiliki LED notifikasi hijau
 
 	# --- Pengaturan Enkripsi & Magisk ---
-	OF_FORCE_DISABLE_DM_VERITY_FORCED_ENCRYPTION=1
+	export OF_FORCE_DISABLE_DM_VERITY_FORCED_ENCRYPTION=1
 #	export OF_KEEP_FORCED_ENCRYPTION=1 # Jaga enkripsi tetap aktif, lebih aman
 #	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1 # Jangan mencoba patch partisi terenkripsi
 	export OF_USE_MAGISKBOOT=1 # Gunakan magiskboot untuk membongkar/mengemas boot.img
