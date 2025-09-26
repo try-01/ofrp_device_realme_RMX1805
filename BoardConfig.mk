@@ -82,7 +82,7 @@ TW_BRIGHTNESS_PATH := "sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
 TW_SCREEN_BLANK_ON_BOOT := true
-# TW_SKIP_COMPATIBILITY_CHECK := true # Tidak lagi dibutuhkan karena sudah di-patch di source
+TW_SKIP_COMPATIBILITY_CHECK := true # Tidak lagi dibutuhkan karena sudah di-patch di source
 
 # =================================================================
 # PENGATURAN ENKRIPSI UNTUK KOMPATIBILITAS STOCK ROM FDE ANDROID 9
@@ -90,7 +90,7 @@ TW_SCREEN_BLANK_ON_BOOT := true
 # Nonaktifkan dekripsi berbasis hardware dan paksa penggunaan dekripsi software.
 # Ini adalah kunci untuk memperbaiki 'failed to decrypt data'.
 # =================================================================
-TARGET_HW_DISK_ENCRYPTION := false
+TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
 TARGET_PROVIDES_KEYMASTER := true
 # TW_INCLUDE_CRYPTO_FBE := true # Ini untuk FBE, tidak relevan untuk masalah FDE saat ini
