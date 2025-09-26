@@ -93,6 +93,9 @@ TW_SKIP_COMPATIBILITY_CHECK := true # Tidak lagi dibutuhkan karena sudah di-patc
 TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
 TARGET_PROVIDES_KEYMASTER := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+BOARD_USES_QCOM_HARDWARE := true  # Pastikan ini ada
+BOARD_USES_KEYMASTER_30 := true   # Atau versi keymaster yang sesuai (misal 3.0)
 # TW_INCLUDE_CRYPTO_FBE := true # Ini untuk FBE, tidak relevan untuk masalah FDE saat ini
 
 # --- Anti-Rollback Protection (ARB) & Properti Build ---
