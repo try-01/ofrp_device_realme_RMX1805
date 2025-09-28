@@ -47,8 +47,9 @@ TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 58846064640
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3599761408
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 25438436352
+BOARD_VENDORIMAGE_PARTITION_SIZE := 1106640896
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -56,15 +57,13 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 
 # --- System-as-Root (SAR) ---
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist
+BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # --- Verified Boot (AVB) ---
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
-BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
-BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 
 # --- Konfigurasi Recovery & TWRP/OrangeFox ---
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/root/etc/recovery.fstab
@@ -82,6 +81,10 @@ TW_BRIGHTNESS_PATH := "sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
 TW_SCREEN_BLANK_ON_BOOT := true
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
+TARGET_USES_MKE2FS := true
+TW_EXCLUDE_TWRPAPP := true
 TW_SKIP_COMPATIBILITY_CHECK := true # Tidak lagi dibutuhkan karena sudah di-patch di source
 
 # =================================================================
@@ -90,8 +93,8 @@ TW_SKIP_COMPATIBILITY_CHECK := true # Tidak lagi dibutuhkan karena sudah di-patc
 # Nonaktifkan dekripsi berbasis hardware dan paksa penggunaan dekripsi software.
 # Ini adalah kunci untuk memperbaiki 'failed to decrypt data'.
 # =================================================================
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
-TARGET_HW_DISK_ENCRYPTION := true
+# TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
+# TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
 TARGET_PROVIDES_KEYMASTER := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
