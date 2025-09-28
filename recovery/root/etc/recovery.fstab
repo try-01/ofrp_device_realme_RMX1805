@@ -16,7 +16,7 @@
 /vendor_image     emmc      /dev/block/bootdevice/by-name/vendor             flags=backup=1;display="Vendor Image"
 
 # Data Partition (CRITICAL FOR DECRYPTION)
-/data             ext4      /dev/block/bootdevice/by-name/userdata             flags=noatime,nosuid,noatime,nodev,barrier=1,noauto_da_alloc,discard,lazytime       fsflags=wait,check,forceencrypt=footer,quota
+/data             ext4      /dev/block/bootdevice/by-name/userdata             flags=forceencrypt=footer,quota
 
 # Other Partitions
 /cache            ext4      /dev/block/bootdevice/by-name/cache              flags=display="Cache";formattable
@@ -31,7 +31,7 @@
 
 # Removable Storage
 /external_sd      vfat      /dev/block/mmcblk1p1            flags=display="MicroSD Card";storage;wipeingui;removable
-/usbstorage		vfat	/dev/block/sdg1		/dev/block/sdg					flags=utf8                                                    fsflags=display="USB Storage";storage;wipeingui;removable
+/usbstorage		vfat	/dev/block/sdg1		/dev/block/sdg					flags=display="USB Storage";storage;wipeingui;removable
 
 /keymaster      emmc      /dev/block/bootdevice/by-name/keymaster                flags=flashimg=1;display="Keymaster"
 /keymasterbak      emmc      /dev/block/bootdevice/by-name/keymasterbak               flags=display="Keymaster Backup"
