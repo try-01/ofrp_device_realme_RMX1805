@@ -19,8 +19,13 @@ $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, build/target/product/embedded.mk)
 
 # Time Zone data for recovery
-PRODUCT_COPY_FILES += \
-    system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+# qcom standard decryption
+PRODUCT_PACKAGES += \
+    qcom_decrypt
+
+# tzdata
+PRODUCT_PACKAGES += \
+    tzdata_twrp
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8953
