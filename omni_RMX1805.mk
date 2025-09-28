@@ -21,7 +21,8 @@ $(call inherit-product, build/target/product/embedded.mk)
 # Time Zone data for recovery
 # qcom standard decryption
 PRODUCT_PACKAGES += \
-    qcom_decrypt
+    qcom_decrypt \
+    qcom_decrypt_fbe
 
 # tzdata
 PRODUCT_PACKAGES += \
