@@ -49,9 +49,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_USE_GREEN_LED=0 # Atur ke 0 karena kebanyakan perangkat Realme tidak memiliki LED notifikasi hijau
 
 	# --- Pengaturan Enkripsi & Magisk ---
-	export OF_FORCE_DISABLE_DM_VERITY_FORCED_ENCRYPTION=1
+	export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
+#	export OF_FORCE_DISABLE_DM_VERITY_FORCED_ENCRYPTION=1
 #	export OF_KEEP_FORCED_ENCRYPTION=1 # Jaga enkripsi tetap aktif, lebih aman
-#	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1 # Jangan mencoba patch partisi terenkripsi
+	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1 # Jangan mencoba patch partisi terenkripsi
 	export OF_USE_MAGISKBOOT=1 # Gunakan magiskboot untuk membongkar/mengemas boot.img
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1 # Gunakan magiskboot untuk semua patching
 #	export OF_USE_NEW_MAGISKBOOT=1 # Gunakan versi magiskboot yang lebih baru
@@ -72,7 +73,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1 # Perbaikan untuk error saat flash manual OTA
 	export OF_PATCH_AVB20=1
 	export OF_USE_LOCKSCREEN_BUTTON=1
-	
+	export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
+	export OF_NO_RELOAD_AFTER_DECRYPTION=1
+	export OF_USE_TWRP_SAR_DETECT=1
+	export FOX_RESET_SETTINGS=1
 
 	# --- Pengaturan Shell & Perkakas Bawaan ---
 	export FOX_USE_BASH_SHELL=1

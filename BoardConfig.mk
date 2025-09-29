@@ -17,6 +17,8 @@
 # --- Konfigurasi Dasar ---
 LOCAL_PATH := device/realme/RMX1805
 
+ALLOW_MISSING_DEPENDENCIES := true
+
 # --- Arsitektur ---
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -42,6 +44,11 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
+
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_RMX1805
+TARGET_RECOVERY_DEVICE_MODULES := libinit_RMX1805
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # --- Partisi ---
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -85,7 +92,7 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
-TW_SKIP_COMPATIBILITY_CHECK := true # Tidak lagi dibutuhkan karena sudah di-patch di source
+#TW_SKIP_COMPATIBILITY_CHECK := true # Tidak lagi dibutuhkan karena sudah di-patch di source
 
 # =================================================================
 # PENGATURAN ENKRIPSI UNTUK KOMPATIBILITAS STOCK ROM FDE ANDROID 9
@@ -93,8 +100,8 @@ TW_SKIP_COMPATIBILITY_CHECK := true # Tidak lagi dibutuhkan karena sudah di-patc
 # Nonaktifkan dekripsi berbasis hardware dan paksa penggunaan dekripsi software.
 # Ini adalah kunci untuk memperbaiki 'failed to decrypt data'.
 # =================================================================
-# TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
-# TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
+TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 # TARGET_PROVIDES_KEYMASTER := true
@@ -102,7 +109,10 @@ BOARD_USES_QCOM_FBE_DECRYPTION := true
 # BOARD_USES_QCOM_HARDWARE := true  # Pastikan ini ada
 # BOARD_USES_KEYMASTER_30 := true   # Atau versi keymaster yang sesuai (misal 3.0)
 TW_INCLUDE_CRYPTO_FBE := true # Ini untuk FBE, tidak relevan untuk masalah FDE saat ini
-TW_INCLUDE_FBE := true
+# TW_INCLUDE_FBE := true
+
+# FPS
+TW_FRAMERATE := 60
 
 # --- Anti-Rollback Protection (ARB) & Properti Build ---
 # HACK: Mencegah error instalasi di beberapa ROM
