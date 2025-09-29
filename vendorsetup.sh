@@ -55,7 +55,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1 # Jangan mencoba patch partisi terenkripsi
 	export OF_USE_MAGISKBOOT=1 # Gunakan magiskboot untuk membongkar/mengemas boot.img
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1 # Gunakan magiskboot untuk semua patching
-#	export OF_USE_NEW_MAGISKBOOT=1 # Gunakan versi magiskboot yang lebih baru
+	export OF_USE_NEW_MAGISKBOOT=1 # Gunakan versi magiskboot yang lebih baru
 #	export OF_SUPPORT_PRE_FLASH_SCRIPT=0
     export OF_SUPPORT_OZIP_DECRYPTION=1
 	export OF_DEFAULT_KEYMASTER_VERSION=3.0
@@ -71,12 +71,13 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1 # Lewati backup folder multi-user (hemat ruang)
 #	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1 # Dukungan untuk update OTA berbasis blok
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1 # Perbaikan untuk error saat flash manual OTA
-	export OF_PATCH_AVB20=1
+#	export OF_PATCH_AVB20=1
 	export OF_USE_LOCKSCREEN_BUTTON=1
 	export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
 	export OF_NO_RELOAD_AFTER_DECRYPTION=1
 	export OF_USE_TWRP_SAR_DETECT=1
 	export FOX_RESET_SETTINGS=1
+	export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
 
 	# --- Pengaturan Shell & Perkakas Bawaan ---
 	export FOX_USE_BASH_SHELL=1
