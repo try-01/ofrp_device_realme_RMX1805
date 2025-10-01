@@ -103,12 +103,13 @@ TW_EXCLUDE_TWRPAPP := true
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
-BOARD_USES_QCOM_FBE_DECRYPTION := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+BOARD_USES_QCOM_HARDWARE := true
 # TARGET_PROVIDES_KEYMASTER := true
 # TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 # BOARD_USES_QCOM_HARDWARE := true  # Pastikan ini ada
 # BOARD_USES_KEYMASTER_30 := true   # Atau versi keymaster yang sesuai (misal 3.0)
-TW_INCLUDE_CRYPTO_FBE := true # Ini untuk FBE, tidak relevan untuk masalah FDE saat ini
+# TW_INCLUDE_CRYPTO_FBE := true # Ini untuk FBE, tidak relevan untuk masalah FDE saat ini
 # TW_INCLUDE_FBE := true
 
 # FPS

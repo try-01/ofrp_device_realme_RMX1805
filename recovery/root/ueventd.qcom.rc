@@ -58,7 +58,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/hab                  0666   system     system
 /dev/synx_device          0660   root       camera
 
-
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
 
@@ -167,8 +166,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/soc:fpc1020 hw_reset 0660 system system 
 /sys/devices/platform/soc/soc:fpc1020 clk_enable 0660 system system
 /sys/devices/platform/soc/soc:fpc1020 pinctl_set 0660 system system
-#Yang2.Yang@ODM_WT.BSP.Fingerprint.Basic.1372106,2018/05/07,modify fingerprint device policy end
 
+#Yang2.Yang@ODM_WT.BSP.Fingerprint.Basic.1372106,2018/05/07,modify fingerprint device policy end
 # wlan
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
@@ -352,7 +351,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/block/platform/soc/4744000.sdhci/by-name/frp       0600   system     system
 /dev/block/platform/soc/4804000.ufshc/by-name/frp       0600   system     system
 
-
 # This is temporary while using SD card for initial bring-up
 /dev/block/platform/soc/8804000.sdhci/by-name/frp       0600   system     system
 
@@ -417,4 +415,3 @@ firmware_directories /vendor/firmware_mnt/image/
 #QG device
 /dev/qg               0660   system     system
 /dev/qg_battery       0660   system     system
-
