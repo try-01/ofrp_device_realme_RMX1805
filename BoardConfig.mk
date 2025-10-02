@@ -103,6 +103,7 @@ TW_EXCLUDE_TWRPAPP := true
 # =================================================================
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
+BOARD_USES_QCOM_DECRYPTION := true
 TW_INCLUDE_CRYPTO := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 BOARD_USES_QCOM_HARDWARE := true
