@@ -16,7 +16,7 @@
 /vendor_image     emmc      /dev/block/bootdevice/by-name/vendor             flags=backup=1;display="Vendor Image"
 
 # Data Partition (CRITICAL FOR DECRYPTION)
-/data             ext4      /dev/block/bootdevice/by-name/userdata             flags=wait,check,encryptable=footer,quota length=-16384 extra_params=fde_enabled,ice
+/data             ext4      /dev/block/bootdevice/by-name/userdata             flags=encryptable=footer,quota,fde_enabled,ice length=-16384
 
 # Other Partitions
 /cache            ext4      /dev/block/bootdevice/by-name/cache              flags=display="Cache";formattable
