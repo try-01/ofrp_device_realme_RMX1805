@@ -39,12 +39,18 @@ TARGET_BOARD_SUFFIX := _64
 
 # --- Kernel ---
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_serial_dm,0x78af000 firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7 ramoops.mem_address=0x91400000 ramoops.mem_size=0x100000 ramoops.record_size=0x20000 ramoops.dump_oops=0 buildvariant=eng
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_serial_dm,0x78af000 firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7 ramoops.mem_address=0x91400000 ramoops.mem_size=0x100000 ramoops.record_size=0x20000 ramoops.dump_oops=0 androidboot.selinux=permissive buildvariant=eng
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
+BOARD_BOOTIMG_HEADER_VERSION := 1
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
-TARGET_PREBUILT_RECOVERY_DTBO := $(LOCAL_PATH)/prebuilt/recovery_dtbo
+BOARD_KERNEL_SEPARATED_DTBO := true
+BOARD_INCLUDE_RECOVERY_DTBO := true
+BOARD_PREBUILT_DTBOIMAGE := $(LOCAL_PATH)/prebuilt/dtbo.img
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_RMX1805
@@ -103,16 +109,7 @@ TW_EXCLUDE_TWRPAPP := true
 # =================================================================
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
-BOARD_USES_QCOM_DECRYPTION := true
 TW_INCLUDE_CRYPTO := true
-# TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-# BOARD_USES_QCOM_HARDWARE := true
-# TARGET_PROVIDES_KEYMASTER := true
-# TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-# BOARD_USES_QCOM_HARDWARE := true  # Pastikan ini ada
-# BOARD_USES_KEYMASTER_30 := true   # Atau versi keymaster yang sesuai (misal 3.0)
-# TW_INCLUDE_CRYPTO_FBE := true # Ini untuk FBE, tidak relevan untuk masalah FDE saat ini
-# TW_INCLUDE_FBE := true
 
 # FPS
 TW_FRAMERATE := 60
