@@ -50,18 +50,12 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	# --- Pengaturan Enkripsi & Magisk ---
 	export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
-#	export OF_FORCE_DISABLE_DM_VERITY_FORCED_ENCRYPTION=1
-#	export OF_KEEP_FORCED_ENCRYPTION=1 # Jaga enkripsi tetap aktif, lebih aman
 	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1 # Jangan mencoba patch partisi terenkripsi
 	export OF_USE_MAGISKBOOT=1 # Gunakan magiskboot untuk membongkar/mengemas boot.img
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1 # Gunakan magiskboot untuk semua patching
 	export OF_USE_NEW_MAGISKBOOT=1 # Gunakan versi magiskboot yang lebih baru
-#	export OF_SUPPORT_PRE_FLASH_SCRIPT=0
     export OF_SUPPORT_OZIP_DECRYPTION=1
 	export OF_DEFAULT_KEYMASTER_VERSION=3.0
-
-	# Hapus Magisk bawaan jika Anda tidak membutuhkannya
-#	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-23.0.zip
 
 	# --- Pengaturan Fungsionalitas & Kompatibilitas ---
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 # Wajib untuk build modern
@@ -69,9 +63,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1510672800" # Workaround untuk Anti-Rollback Protection lama
 	export FOX_REPLACE_BOOTIMAGE_DATE=1
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1 # Lewati backup folder multi-user (hemat ruang)
-#	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1 # Dukungan untuk update OTA berbasis blok
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1 # Perbaikan untuk error saat flash manual OTA
-#	export OF_PATCH_AVB20=1
 	export OF_USE_LOCKSCREEN_BUTTON=1
 	export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
 	export OF_NO_RELOAD_AFTER_DECRYPTION=1
@@ -91,8 +83,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
     # --- Pengaturan Spesifik R11.1 (Biarkan default) ---
     export FOX_R11=1
-    export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
-#    export OF_RUN_POST_FORMAT_PROCESS=1 # Jalankan proses setelah format data (perbaikan MTP)
+    export OF_QUICK_BACKUP_LIST="/boot;/dtbo;/data;/cache;/system_root;/vendor;"
 	
 	# --- HAPUS KONFIGURASI KHUSUS MIUI ---
 	# Baris-baris berikut tidak relevan untuk Realme dan sebaiknya dihapus

@@ -1,67 +1,61 @@
-# OrangeFox Recovery fstab for Realme 2 (RMX1805)
-# Safe & Compatible Version
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-# Core Boot & System Partitions
-/boot             emmc      /dev/block/bootdevice/by-name/boot               flags=backup=1;display="Boot"
-/dtbo             emmc      /dev/block/bootdevice/by-name/dtbo               flags=backup=1;display="DTBO";flashimg=1
-/recovery         emmc      /dev/block/bootdevice/by-name/recovery           flags=backup=1;display="Recovery"
-/vbmeta           emmc      /dev/block/bootdevice/by-name/vbmeta             flags=backup=1;display="VBMeta";flashimg=1
+# <mount_point>     <type>    <mnt_flags and options>                      <fs_mgr_flags>
+/boot                emmc     /dev/block/bootdevice/by-name/boot           flags=display="Boot";backup=1;flashimg=1
+/data                ext4     /dev/block/bootdevice/by-name/userdata       flags=encryptable=footer;length=-16384;fileencryption=ice:aes-256-cts:aes-256-heh
+/cache               ext4     /dev/block/bootdevice/by-name/cache          flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset
+/system_root         ext4     /dev/block/bootdevice/by-name/system         flags=display="System";backup=0;wipeingui
+/system_image        emmc     /dev/block/bootdevice/by-name/system         flags=display="System";flashimg=1;backup=1
+/vendor              ext4     /dev/block/bootdevice/by-name/vendor         flags=display="Vendor";backup=0;wipeingui
+/vendor_image        emmc     /dev/block/bootdevice/by-name/vendor         flags=display="Vendor";flashimg=1;backup=1
 
-# System & Vendor (mounted as ext4)
-/system_root      ext4      /dev/block/bootdevice/by-name/system             flags=display="System"
-/vendor           ext4      /dev/block/bootdevice/by-name/vendor             flags=display="Vendor";wipeingui
+/dtbo                emmc     /dev/block/bootdevice/by-name/dtbo           flags=display="DTBO";backup=1;flashimg=1
+/recovery            emmc     /dev/block/bootdevice/by-name/recovery       flags=display="Recovery";backup=1;flashimg=1
+/vbmeta              emmc     /dev/block/bootdevice/by-name/vbmeta         flags=display="VBMeta";backup=1;flashimg=1
+/persist             ext4     /dev/block/bootdevice/by-name/persist        flags=display="Persist";backup=0
+/persist_image       emmc     /dev/block/bootdevice/by-name/persist        flags=display="Persist";flashimg=1;backup=1
 
-# System & Vendor (as raw images for backup/restore/flash)
-/system_image     emmc      /dev/block/bootdevice/by-name/system             flags=backup=1;display="System Image"
-/vendor_image     emmc      /dev/block/bootdevice/by-name/vendor             flags=backup=1;display="Vendor Image"
+# Bootloader
+/aboot               emmc     /dev/block/bootdevice/by-name/aboot          flags=display="Bootloader";backup=0
+/abootbak           emmc     /dev/block/bootdevice/by-name/abootbak       flags=display="Bootloaderbk";backup=0
+/sbl1                emmc     /dev/block/bootdevice/by-name/sbl1           flags=display="SBL1";backup=0;subpartitionof=/aboot
+/sbl1bak             emmc     /dev/block/bootdevice/by-name/sbl1bak        flags=display="SBL1bk";backup=0;subpartitionof=/abootbak
+/rpm                 emmc     /dev/block/bootdevice/by-name/rpm            flags=display="RPM";backup=0;subpartitionof=/aboot
+/rpmbak             emmc     /dev/block/bootdevice/by-name/rpmbak         flags=display="RPMbk";backup=0;subpartitionof=/abootbak
+/misc                emmc     /dev/block/bootdevice/by-name/misc           flags=display="Misc";backup=0;subpartitionof=/aboot
+/tz                  emmc     /dev/block/bootdevice/by-name/tz             flags=display="TZ";backup=0;subpartitionof=/aboot
+/tzbak               emmc     /dev/block/bootdevice/by-name/tzbak          flags=display="TZbk";backup=0;subpartitionof=/abootbak
+/ssd                 emmc     /dev/block/bootdevice/by-name/ssd            flags=display="SSD";backup=0;subpartitionof=/aboot
+/static_nv_bk         emmc    /dev/block/bootdevice/by-name/oppostanvbk.   flags=flags=display="static_nv_bk";backup=0
+/oppodycnvbk        emmc    /dev/block/bootdevice/by-name/oppodycnvbk   flags=flags=display="oppodycnvbk";backup=0
+/reserve4            emmc    /dev/block/bootdevice/by-name/reserve4        flags=flags=display="reserve4";backup=0
+/opporeserve         ext4      /dev/block/bootdevice/by-name/opporeserve2   flags=flags=display="opporeserve";backup=0
+/keystore            emmc     /dev/block/bootdevice/by-name/keystore       flags=display="Keystore";backup=0;subpartitionof=/aboot
+/keymaster           emmc     /dev/block/bootdevice/by-name/keymaster      flags=display="Keymaster";backup=0;subpartitionof=/aboot
+/DDR                 emmc     /dev/block/bootdevice/by-name/DDR            flags=display="DDR";backup=0;subpartitionof=/aboot
+/devinfo             emmc     /dev/block/bootdevice/by-name/devinfo        flags=display="Dev Info";backup=0;subpartitionof=/aboot
+/msadp               emmc     /dev/block/bootdevice/by-name/msadp          flags=display="MSADP";backup=0;subpartitionof=/aboot
+/apdp                emmc     /dev/block/bootdevice/by-name/apdp           flags=display="APDP";backup=0;subpartitionof=/aboot
+/cmnlib64            emmc     /dev/block/bootdevice/by-name/cmnlib64       flags=display="CMN Lib64";backup=0;subpartitionof=/aboot
+/cmnlib              emmc     /dev/block/bootdevice/by-name/cmnlib         flags=display="CMN Lib";backup=0;subpartitionof=/aboot
+/devcfg              emmc     /dev/block/bootdevice/by-name/devcfg         flags=display="Dev CFG";backup=0;subpartitionof=/aboot
+/mdtp                emmc     /dev/block/bootdevice/by-name/mdtp           flags=display="MDTP";backup=0;subpartitionof=/aboot
 
-# Data Partition (CRITICAL FOR DECRYPTION)
-/data             ext4      /dev/block/bootdevice/by-name/userdata             flags=encryptable=footer,quota,fde_enabled,ice length=-16384
+# Firmware
+/firmware            vfat     /dev/block/bootdevice/by-name/modem          flags=display="Firmware";backup=0
+/firmware_image      emmc     /dev/block/bootdevice/by-name/modem          flags=display="Firmware";backup=1
+/dsp                 ext4     /dev/block/bootdevice/by-name/dsp            flags=display="DSP";backup=0
+/dsp_image           emmc     /dev/block/bootdevice/by-name/dsp            flags=display="DSP";backup=1;subpartitionof=/firmware_image
+/sec                 emmc     /dev/block/bootdevice/by-name/sec            flags=display="SEC";backup=1;subpartitionof=/firmware_image
 
-# Other Partitions
-/cache            ext4      /dev/block/bootdevice/by-name/cache              flags=display="Cache";formattable
-/persist          ext4      /dev/block/bootdevice/by-name/persist            flags=display="Persist";backup=1
-/firmware      vfat   /dev/block/bootdevice/by-name/modem                        flags=display="Firmware";mounttodecrypt
-/dsp              emmc      /dev/block/bootdevice/by-name/dsp                flags=backup=1;display="DSP";flashimg=1
-/efs1             emmc      /dev/block/bootdevice/by-name/modem_st1          flags=backup=1;display="EFS"
-/efs2             emmc      /dev/block/bootdevice/by-name/modem_st2          flags=backup=1;display="EFS Backup"
-/logo             emmc      /dev/block/bootdevice/by-name/LOGO               flags=flashimg=1;display="Logo"
-/misc             emmc      /dev/block/bootdevice/by-name/misc               flags=display="Misc"
-/oem              emmc      /dev/block/bootdevice/by-name/oem                flags=display="OEM"
+# EFS
+/efs1                emmc     /dev/block/bootdevice/by-name/modemst1       flags=display="EFS";backup=1
+/efs2                emmc     /dev/block/bootdevice/by-name/modemst2       flags=display="EFS2";backup=1;subpartitionof=/efs1
+/fsc                 emmc     /dev/block/bootdevice/by-name/fsc            flags=display="FSC";backup=1;subpartitionof=/efs1
+/fsg                 emmc     /dev/block/bootdevice/by-name/fsg            flags=display="FSG";backup=1;subpartitionof=/efs1
 
-# Removable Storage
-/external_sd      vfat      /dev/block/mmcblk1p1            flags=display="MicroSD Card";storage;wipeingui;removable
-/usbstorage		vfat	/dev/block/sdg1		/dev/block/sdg					flags=display="USB Storage";storage;wipeingui;removable
-
-/keymaster      emmc      /dev/block/bootdevice/by-name/keymaster                flags=flashimg=1;display="Keymaster"
-/keymasterbak      emmc      /dev/block/bootdevice/by-name/keymasterbak               flags=display="Keymaster Backup"
-/keystore      emmc      /dev/block/bootdevice/by-name/keystore               flags=display="Keystore"
-/dev/block/bootdevice/by-name/aboot        /aboot          emmc    flags=defaults
-/dev/block/bootdevice/by-name/abootbak     /abootbak       emmc    flags=defaults
-/dev/block/bootdevice/by-name/modem        /modem          emmc    flags=defaults
-/dev/block/bootdevice/by-name/sbl1         /sbl1           emmc    flags=defaults
-/dev/block/bootdevice/by-name/sbl1bak      /sbl1bak        emmc    flags=defaults
-/dev/block/bootdevice/by-name/rpm          /rpm            emmc    flags=defaults
-/dev/block/bootdevice/by-name/rpmbak       /rpmbak         emmc    flags=defaults
-/dev/block/bootdevice/by-name/tz           /tz             emmc    flags=defaults
-/dev/block/bootdevice/by-name/tzbak        /tzbak          emmc    flags=defaults
-/dev/block/bootdevice/by-name/modem_st1    /modemst1       emmc    flags=defaults
-/dev/block/bootdevice/by-name/modem_st2    /modemst2       emmc    flags=defaults
-/dev/block/bootdevice/by-name/oppostanvbk  /static_nv_bk   emmc    flags=defaults
-/dev/block/bootdevice/by-name/oppodycnvbk  /oppodycnvbk    emmc    flags=defaults
-/dev/block/bootdevice/by-name/LOGO         /logo           emmc    flags=defaults
-/dev/block/bootdevice/by-name/reserve4     /reserve4       emmc    flags=defaults
-/dev/block/bootdevice/by-name/dsp          /dsp            emmc    flags=defaults
-/dev/block/bootdevice/by-name/DDR          /DDR            emmc    flags=defaults
-/dev/block/bootdevice/by-name/devcfg       /devcfg         emmc    flags=defaults
-/dev/block/bootdevice/by-name/mdtp         /mdtp           emmc    flags=defaults
-/dev/block/bootdevice/by-name/cmnlib       /cmnlib         emmc    flags=defaults
-/dev/block/bootdevice/by-name/cmnlibbak    /cmnlibbak      emmc    flags=defaults
-/dev/block/bootdevice/by-name/apdp         /apdp           emmc    flags=defaults
-/dev/block/bootdevice/by-name/devinfo      /devinfo        emmc    flags=defaults
-/dev/block/bootdevice/by-name/persist      /persist        ext4    flags=defaults
-/dev/block/bootdevice/by-name/opporeserve2 /opporeserve    ext4    flags=wait,check
-/dev/block/bootdevice/by-name/abl          /abl            emmc    flags=defaults
-/dev/block/bootdevice/by-name/ablbak       /ablbak         emmc    flags=defaults
-/dev/block/bootdevice/by-name/xbl          /xbl            emmc    flags=defaults
-/dev/block/bootdevice/by-name/xblbak       /xblbak         emmc    flags=defaults
+# Removable storage
+/external_sd         auto     /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="MicroSD Card";storage;wipeingui;removable;fsflags="utf8"
+/usb-otg             auto     /dev/block/sda1       /dev/block/sda         flags=display="USB OTG";storage;wipeingui;removable;fsflags="utf8"
