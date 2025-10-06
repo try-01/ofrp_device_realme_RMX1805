@@ -53,9 +53,9 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_PREBUILT_DTBOIMAGE := $(LOCAL_PATH)/prebuilt/dtbo.img
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_RMX1805
-TARGET_RECOVERY_DEVICE_MODULES := libinit_RMX1805
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
+#TARGET_INIT_VENDOR_LIB := libinit_RMX1805
+#TARGET_RECOVERY_DEVICE_MODULES := libinit_RMX1805
+#TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # --- Partisi ---
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -107,7 +107,7 @@ TW_EXCLUDE_TWRPAPP := true
 # Nonaktifkan dekripsi berbasis hardware dan paksa penggunaan dekripsi software.
 # Ini adalah kunci untuk memperbaiki 'failed to decrypt data'.
 # =================================================================
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
+TARGET_CRYPTFS_HW_PATH := $(LOCAL_PATH)/recovery/root/sbin/libcryptfs_hw.so
 TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
 
