@@ -56,7 +56,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_USE_NEW_MAGISKBOOT=1 # Gunakan versi magiskboot yang lebih baru
     export OF_SUPPORT_OZIP_DECRYPTION=1
 	export OF_DEFAULT_KEYMASTER_VERSION=3.0
-	export OF_USE_LEGACY_CRYPTO=1
+#	export OF_USE_LEGACY_CRYPTO=1
 
 	# --- Pengaturan Fungsionalitas & Kompatibilitas ---
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 # Wajib untuk build modern
