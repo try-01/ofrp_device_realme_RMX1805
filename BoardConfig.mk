@@ -126,6 +126,7 @@ TW_INCLUDE_CRYPTO := true
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
 BOARD_USES_QCOM_DECRYPTION := true
+TW_CRYPTO_USE_SYSTEM_VOLD := true
 
 # FPS
 TW_FRAMERATE := 60
