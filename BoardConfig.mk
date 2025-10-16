@@ -125,9 +125,7 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
 TW_INCLUDE_CRYPTO := true
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
-#BOARD_USES_QCOM_DECRYPTION := true
-TW_CRYPTO_USE_SYSTEM_VOLD := hwservicemanager servicemanager qseecomd keymaster-3-0
-TW_CRYPTO_SYSTEM_VOLD_MOUNT := vendor
+BOARD_USES_QCOM_DECRYPTION := true
 
 # FPS
 TW_FRAMERATE := 60
