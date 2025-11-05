@@ -18,17 +18,6 @@
 $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, build/target/product/embedded.mk)
 
-# qcom standard decryption
-PRODUCT_PACKAGES += \
-    qcom_decrypt
-
-# tzdata
-PRODUCT_PACKAGES += \
-    tzdata_twrp
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.keystore=msm8953
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := RMX1805
 PRODUCT_NAME := omni_$(PRODUCT_DEVICE)

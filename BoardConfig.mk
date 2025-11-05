@@ -17,13 +17,13 @@
 # --- Konfigurasi Dasar ---
 LOCAL_PATH := device/realme/RMX1805
 
-ALLOW_MISSING_DEPENDENCIES := true
+#ALLOW_MISSING_DEPENDENCIES := true
 
 # --- Arsitektur ---
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a53
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
@@ -99,21 +99,6 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
-TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hidl.base@1.0 \
-    libdrm \
-    libion \
-    libxml2 \
-    libdisplayconfig.qti \
-    vendor.display.config@1.0
-     
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.base@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libdrm.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/libdisplayconfig.qti.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so
 #TW_SKIP_COMPATIBILITY_CHECK := true # Tidak lagi dibutuhkan karena sudah di-patch di source
 
 # =================================================================
@@ -125,7 +110,7 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
 TW_INCLUDE_CRYPTO := true
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
-BOARD_USES_QCOM_DECRYPTION := true
+#BOARD_USES_QCOM_DECRYPTION := true
 
 # FPS
 TW_FRAMERATE := 60
@@ -133,5 +118,4 @@ TW_FRAMERATE := 60
 # --- Anti-Rollback Protection (ARB) & Properti Build ---
 # HACK: Mencegah error instalasi di beberapa ROM
 PLATFORM_SECURITY_PATCH := 2099-12-31
-VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0

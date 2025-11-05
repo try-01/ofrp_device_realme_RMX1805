@@ -59,6 +59,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 #	export OF_USE_LEGACY_CRYPTO=1
 
 	# --- Pengaturan Fungsionalitas & Kompatibilitas ---
+	export ALLOW_MISSING_DEPENDENCIES=true
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 # Wajib untuk build modern
 	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1 # Lewati pemeriksaan Treble, berguna untuk perangkat lama
 	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1510672800" # Workaround untuk Anti-Rollback Protection lama
@@ -71,6 +72,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_USE_TWRP_SAR_DETECT=1
 	export FOX_RESET_SETTINGS=1
 	export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
+	export OF_AB_DEVICE=0
+	export FOX_ADVANCED_SECURITY=1
 
 	# --- Pengaturan Shell & Perkakas Bawaan ---
 	export FOX_USE_BASH_SHELL=1
