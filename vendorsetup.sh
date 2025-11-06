@@ -72,7 +72,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_USE_TWRP_SAR_DETECT=1
 	export FOX_RESET_SETTINGS=1
 	export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
-	#export OF_AB_DEVICE=0
 	#export FOX_ADVANCED_SECURITY=1
 
 	# --- Pengaturan Shell & Perkakas Bawaan ---
