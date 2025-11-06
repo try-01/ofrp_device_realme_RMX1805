@@ -17,7 +17,7 @@
 # --- Konfigurasi Dasar ---
 LOCAL_PATH := device/realme/RMX1805
 
-#ALLOW_MISSING_DEPENDENCIES := true
+ALLOW_MISSING_DEPENDENCIES := true
 
 # --- Arsitektur ---
 TARGET_ARCH := arm64
