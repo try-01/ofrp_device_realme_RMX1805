@@ -115,12 +115,12 @@ TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 #BOARD_USES_QCOM_DECRYPTION := true
-TW_CRYPTO_USE_SYSTEM_VOLD := \
-    hwservicemanager \
-    keymaster-3-0-qti \
-    qseecomd \
-    servicemanager
-TW_CRYPTO_SYSTEM_VOLD_MOUNT := vendor
+#TW_CRYPTO_USE_SYSTEM_VOLD := \
+#    hwservicemanager \
+#    keymaster-3-0-qti \
+#    qseecomd \
+#    servicemanager
+#TW_CRYPTO_SYSTEM_VOLD_MOUNT := vendor
 
 # FPS
 TW_FRAMERATE := 60
