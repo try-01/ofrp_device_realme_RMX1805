@@ -110,11 +110,11 @@ TW_EXCLUDE_TWRPAPP := true
 # Ini adalah kunci untuk memperbaiki 'failed to decrypt data'.
 # =================================================================
 TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_FBE := true
+#TW_INCLUDE_FBE := true
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
-BOARD_USES_QCOM_FBE_DECRYPTION := true
-#BOARD_USES_QCOM_DECRYPTION := true
+#BOARD_USES_QCOM_FBE_DECRYPTION := true
+BOARD_USES_QCOM_DECRYPTION := true
 #TW_CRYPTO_USE_SYSTEM_VOLD := \
 #    hwservicemanager \
 #    keymaster-3-0-qti \
