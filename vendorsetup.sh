@@ -55,7 +55,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1 # Gunakan magiskboot untuk semua patching
 	export OF_USE_NEW_MAGISKBOOT=1 # Gunakan versi magiskboot yang lebih baru
     export OF_SUPPORT_OZIP_DECRYPTION=1
-	export OF_DEFAULT_KEYMASTER_VERSION=3.0
+#	export OF_DEFAULT_KEYMASTER_VERSION=3.0
 #	export OF_USE_LEGACY_CRYPTO=1
 
 	# --- Pengaturan Fungsionalitas & Kompatibilitas ---
@@ -68,7 +68,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1 # Perbaikan untuk error saat flash manual OTA
 	export OF_USE_LOCKSCREEN_BUTTON=1
 	export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
-	export OF_NO_RELOAD_AFTER_DECRYPTION=1
+#	export OF_NO_RELOAD_AFTER_DECRYPTION=1
 	export OF_USE_TWRP_SAR_DETECT=1
 	export FOX_RESET_SETTINGS=1
 	export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1

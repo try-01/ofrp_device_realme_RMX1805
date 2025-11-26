@@ -43,10 +43,10 @@ BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 an
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz
 BOARD_PREBUILT_DTBOIMAGE := $(LOCAL_PATH)/prebuilt/dtbo.img
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_BOOTIMG_HEADER_VERSION := 1
@@ -110,14 +110,14 @@ TW_EXCLUDE_TWRPAPP := true
 # Ini adalah kunci untuk memperbaiki 'failed to decrypt data'.
 # =================================================================
 TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_FBE := true
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
-BOARD_USES_QCOM_DECRYPTION := true
 
 # FPS
 TW_FRAMERATE := 60
 
 # --- Anti-Rollback Protection (ARB) & Properti Build ---
 # HACK: Mencegah error instalasi di beberapa ROM
-PLATFORM_SECURITY_PATCH := 2099-12-31
-PLATFORM_VERSION := 16.1.0
+PLATFORM_SECURITY_PATCH := 2020-11-05
+PLATFORM_VERSION := 9
