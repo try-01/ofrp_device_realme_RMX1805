@@ -101,7 +101,10 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
-#TW_SKIP_COMPATIBILITY_CHECK := true # Tidak lagi dibutuhkan karena sudah di-patch di source
+TW_INCLUDE_LIBRESETPROP := true
+TW_INCLUDE_FB2PNG := true
+TW_SKIP_COMPATIBILITY_CHECK := true
+TW_OZIP_DECRYPT_KEY := "1C4A11A3A22513AE541B53BB31513121"
 
 # =================================================================
 # PENGATURAN ENKRIPSI UNTUK KOMPATIBILITAS STOCK ROM FDE ANDROID 9
@@ -110,7 +113,6 @@ TW_EXCLUDE_TWRPAPP := true
 # Ini adalah kunci untuk memperbaiki 'failed to decrypt data'.
 # =================================================================
 TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_FBE := true
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
 

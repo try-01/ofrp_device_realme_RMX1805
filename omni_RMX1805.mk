@@ -21,8 +21,8 @@ $(call inherit-product, build/target/product/embedded.mk)
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := RMX1805
 PRODUCT_NAME := omni_$(PRODUCT_DEVICE)
-PRODUCT_BRAND := Oppo
-PRODUCT_MODEL := Realme 2
+PRODUCT_BRAND := OPPO
+PRODUCT_MODEL := RMX1805
 PRODUCT_MANUFACTURER := Oppo
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
