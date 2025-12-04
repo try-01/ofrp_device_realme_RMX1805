@@ -113,8 +113,8 @@ TW_OZIP_DECRYPT_KEY := "1C4A11A3A22513AE541B53BB31513121"
 # Ini adalah kunci untuk memperbaiki 'failed to decrypt data'.
 # =================================================================
 TW_INCLUDE_CRYPTO := true
-#TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
-#TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
+TARGET_HW_DISK_ENCRYPTION := true
 
 # FPS
 TW_FRAMERATE := 60
